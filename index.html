@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Using Functions</title>
+    <script>
+        // Function to perform multiplication
+        function multiplyNumbers() {
+            // Get the input values
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+
+            // Check if the inputs are numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            // Perform multiplication
+            let result = num1 * num2;
+
+            // Display the result
+            document.getElementById("result").innerText = "Result: " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Multiplication Using Functions</h1>
+    <p>Enter two numbers to multiply:</p>
+
+    <form onsubmit="event.preventDefault(); multiplyNumbers();">
+        <label for="number1">Number 1:</label>
+        <input type="text" id="number1" placeholder="Enter first number">
+        <br><br>
+        <label for="number2">Number 2:</label>
+        <input type="text" id="number2" placeholder="Enter second number">
+        <br><br>
+        <button type="submit">Multiply</button>
+    </form>
+
+    <p id="result"></p>
+</body>
+</html>
